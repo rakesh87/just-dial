@@ -1,0 +1,27 @@
+<% if @items.present? %>
+<h1>Listing items</h1>
+
+<table class="CSSTableGenerator">
+  <tr>
+    <th>Name</th>
+    <th>Detail</th>
+    <th>Avg Ratings</th>
+    <th>Action</th>
+  </tr>
+
+<% @items.each do |item| %>
+  <tr>
+    <td><%= link_to item.name, item %></td>
+    <td><%= item.detail %></td>
+    <td><%= item.avg_ratings %></td>
+    <td><%= link_to 'Rate and Review it', new_review_rating_path(item_id: item.id ) if current_user.present? %></td>
+  </tr>
+<% end %>
+</table>
+<% else %>
+  <p> we don't have any items to review </p?
+<% end %>
+<br />
+
+<%= link_to 'New Item', new_item_path if current_user.present? %>
+
