@@ -1,5 +1,10 @@
 JustDial::Application.routes.draw do
-  resources :review_ratings
+  resources :items
+
+
+  resources :review_ratings, only: [:new, :create] do
+    get 'review_rating'
+  end
 
 
   resources :categories
@@ -65,7 +70,7 @@ JustDial::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'cities#index'
+  root :to => 'items#index'
 
   # See how all your routes lay out with "rake routes"
 

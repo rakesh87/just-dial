@@ -4,7 +4,27 @@
   <b>Name:</b>
   <%= @category.name %>
 </p>
+<br/>
+<br/>
+<b>Results</b>
+<br/>
+<table>
+  <tr>
+    <th>Item</th>
+    <th>Action</th>
+  </tr>
+
+<%@items.each do |item| %>
+  <tr>
+    <td> <%= item %> </td>
+  <td> <%= link_to 'Rate and Review it', '#' %> </td>
+  </tr>
+<% end %>
+</table>
 
 
+<br/>
+<br/>
+<br/>
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>

@@ -1,4 +1,4 @@
 class ReviewRating < ActiveRecord::Base
-  attr_accessible :category_id, :city_id, :rating, :review, :user_id
-  belongs_to :category
+  attr_accessible :rating, :review, :user_id, :item_id
+  belongs_to :item
 end
