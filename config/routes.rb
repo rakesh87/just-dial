@@ -6,20 +6,12 @@ JustDial::Application.routes.draw do
     get 'review_rating'
   end
 
-
-  resources :categories
-
-
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
   devise_for :users
   ActiveAdmin.routes(self)
 
-  #resources :users
-
-
-  resources :cities
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
