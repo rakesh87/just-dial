@@ -1,3 +1,4 @@
+<% if @items.present? %>
 <h1>Listing items</h1>
 
 <table class="CSSTableGenerator">
@@ -17,8 +18,10 @@
   </tr>
 <% end %>
 </table>
-
+<% else %>
+  <p> we don't have any items to review </p?
+<% end %>
 <br />
 
-<%= link_to 'New Item', new_item_path %>
+<%= link_to 'New Item', new_item_path if current_user.present? %>
 
