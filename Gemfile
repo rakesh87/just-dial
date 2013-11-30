@@ -20,11 +20,13 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'activeadmin'
+gem "activeadmin", github: "gregbell/active_admin"
 gem 'capistrano', '2.12.0'
 #gem 'airbrake'
 gem 'rvm-capistrano'
 gem 'jquery-rails'
+gem "jquery-ui-rails"
+gem 'pg'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
