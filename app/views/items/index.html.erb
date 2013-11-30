@@ -13,7 +13,7 @@
     <td><%= link_to item.name, item %></td>
     <td><%= item.detail %></td>
     <td><%= item.avg_ratings %></td>
-    <td><%= link_to 'Rate and Review it', new_review_rating_path(item_id: item.id ) %></td>
+    <td><%= link_to 'Rate and Review it', new_review_rating_path(item_id: item.id ) if current_user.present? %></td>
   </tr>
 <% end %>
 </table>
