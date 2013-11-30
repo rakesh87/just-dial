@@ -1,2 +1,5 @@
-class ItemsController < InheritedResources::Base
+class ItemsController < ApplicationController
+  def index
+    @items = Item.all
+  end
 end

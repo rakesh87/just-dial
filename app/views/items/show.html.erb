@@ -10,6 +10,23 @@
   <%= @item.detail %>
 </p>
 
-
-<%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
+
+<br/>
+
+<b> Reviews and Ratingd </b>
+<table class="CSSTableGenerator">
+  <tr>
+    <th>User</th>
+    <th>Review</th>
+    <th>Ratings</th>
+  </tr>
+
+<% @item.review_ratings.each do |review_rating| %>
+  <tr>
+    <td><%= review_rating.user.email %></td>
+    <td><%= review_rating.review %></td>
+    <td><%= review_rating.rating %></td>
+  </tr>
+<% end %>
+</table>
