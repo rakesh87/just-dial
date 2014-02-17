@@ -1,4 +1,5 @@
 class ItemsController < InheritedResources::Base
+
   def index
     @items = Item.all
   end
@@ -6,4 +7,5 @@ class ItemsController < InheritedResources::Base
   def show
     @item = Item.find(params[:id])
   end
+
 end
